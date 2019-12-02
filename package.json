@@ -1,6 +1,6 @@
 {
   "name": "vue-element-zery-layout",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "author": "Zery Chou",
   "description": "the zery-layout base on vue and element-ui that can build a backend fastly",
@@ -17,10 +17,11 @@
     "vue": "^2.6.10"
   },
   "files": [
-    "lib/fonts",
     "lib/zery-layout.css",
     "lib/zery-layout.umd.min.js",
-    "package.json"
+    "src/package",
+    "package.json",
+    "README.md"
   ],
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.0",
