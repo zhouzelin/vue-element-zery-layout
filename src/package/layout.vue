@@ -16,6 +16,7 @@
             :collapse-transition="false"
             :unique-opened="uniqueOpened"
             :router="router"
+            @select="selectMenu"
           >
             <component
               v-for="(menu, index) in menuList"
@@ -59,14 +60,20 @@
             <el-breadcrumb-item class="zery-layout-bread-item" v-for="(item, index) in breadList" :key="index">{{item.name}}</el-breadcrumb-item>
           </el-breadcrumb>
           <div class="zery-layout-user-wrapper">
-            <el-avatar
-              size="small"
-              :src="userPic"
-              @blur="$emit('user-blur', $event)"
-              @click="$emit('user-click', $event)"
+            <el-popover
+              v-model="visible"
+              placement="bottom"
+              trigger="click"
             >
-            </el-avatar>
-            <slot name="option-list"></slot>
+              <el-avatar
+                size="small"
+                :src="userPic"
+                @click="visible = !visible"
+                slot="reference"
+              >
+              </el-avatar>
+              <slot name="dropdown"></slot>
+            </el-popover>
           </div>
         </slot>
       </el-header>
@@ -75,7 +82,7 @@
         <slot name="main"></slot>
       </el-main>
       <!--底部部栏-->
-      <el-footer height="30px" class="zery-layout-foot">
+      <el-footer height="30px" class="zery-layout-foot" v-if="$slots.footer">
         <slot name="footer"></slot>
       </el-footer>
     </el-container>
@@ -88,7 +95,8 @@ export default {
   data() {
     return {
       isCollapse: false,
-      asideWidth: '250px'
+      asideWidth: '250px',
+      visible: false
     }
   },
   props: {
@@ -106,11 +114,13 @@ export default {
     },
     breadList: {
       type: Array,
-      default: () => []
+      default: () => {
+        return this.$route.match()
+      }
     },
     router: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
   methods: {
@@ -123,6 +133,9 @@ export default {
         this.isCollapse = true
       }
       this.$emit('fold-menu', this.isCollapse)
+    },
+    selectMenu(index, indexPath) {
+      this.$emit('select-menu', index, indexPath)
     }
   }
 }

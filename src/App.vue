@@ -5,18 +5,20 @@
       :bread-list="breadList"
       :router="false"
       @fold-menu="foldMenu"
+      @select-menu="selectMenu"
     >
       <div slot="logo" class="logo-wrapper">
         <span class="logo">
           <img src="/assets/img/logo-icon.png" alt="logo">
         </span>
-        <span class="text" v-show="!foldFlag">
-          Zery Admin
-        </span>
+        <span class="text" v-show="!foldFlag">Zery Admin</span>
       </div>
-      <div slot="main" class="main">
-        main
-      </div>
+      <ul slot="dropdown" class="dropdown">
+        <li>基本信息</li>
+        <li>修改密码</li>
+        <li>退出登录</li>
+      </ul>
+      <div slot="main" class="main">main</div>
       <div slot="footer" class="footer">Copyright &copy; 2019-2039 Zery Admin</div>
     </zery-layout>
   </div>
@@ -64,10 +66,6 @@ export default {
         {
           name: '首页',
           path: '/home',
-        },
-        {
-          name: '导航一',
-          path: '/location'
         }
       ]
     }
@@ -75,6 +73,29 @@ export default {
   methods: {
     foldMenu(value) {
       this.foldFlag = value
+    },
+    selectMenu(index, pathIndex) {
+      this.breadList = pathIndex.map(item => {
+        let obj = {}
+        this.menuList.forEach(x => {
+          if(x.path === item) {
+            obj = {
+              name: x.name,
+              path: x.path
+            }
+          } else if(x.children){
+            x.children.forEach(y => {
+              if(y.path === item) {
+                obj = {
+                  name: y.name,
+                  path: y.path
+                }
+              }
+            })
+          }
+        })
+        return obj
+      })
     }
   }
 }
@@ -108,5 +129,17 @@ export default {
 .main {
   background: #fff;
   height: 100%;
+}
+.dropdown {
+  width: 100%;
+}
+.dropdown li {
+  padding: 4px 20px;
+  text-align: center;
+  cursor: pointer;
+}
+.dropdown li:hover {
+  background: #606266;
+  color: #fff;
 }
 </style>
