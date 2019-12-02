@@ -1,5 +1,13 @@
 # Zery-Layout
 一个基于vue和element-ui开发的UI插件，其能快速搭建一个后台管理系统的布局。
+###使用方法
+```javascript
+// main.js
+import Vue from 'Vue';
+import layout from 'vue-element-zery-layout';
+Vue.use(layout);
+......
+```
 ###Attribute
 |参数|说明|类型|可选值|默认值|
 | :------------ | :------------ | :------------ | :------------ | :------------ |
