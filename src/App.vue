@@ -14,6 +14,9 @@
           Zery Admin
         </span>
       </div>
+      <div slot="main" class="main">
+        main
+      </div>
       <div slot="footer" class="footer">Copyright &copy; 2019-2039 Zery Admin</div>
     </zery-layout>
   </div>
@@ -101,5 +104,9 @@ export default {
 .footer {
   line-height: 30px;
   text-align: center;
+}
+.main {
+  background: #fff;
+  height: 100%;
 }
 </style>

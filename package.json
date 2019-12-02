@@ -1,15 +1,15 @@
 {
   "name": "vue-element-zery-layout",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "author": "Zery Chou",
   "description": "the zery-layout base on vue and element-ui that can build a backend fastly",
-  "main": "lib/zeryLayout.min.js",
+  "main": "lib/zery_layout.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name zeryLayout src/package/index.js"
+    "lib": "vue-cli-service build --target lib --name zery_layout src/package/index.js"
   },
   "dependencies": {
     "core-js": "^3.4.3",

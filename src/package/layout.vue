@@ -72,7 +72,7 @@
       </el-header>
       <!--身体-->
       <el-main class="zery-layout-main">
-        <slot></slot>
+        <slot name="main"></slot>
       </el-main>
       <!--底部部栏-->
       <el-footer height="30px" class="zery-layout-foot">
@@ -175,7 +175,7 @@ export default {
   .zery-layout-main {
     background: #eeeeee;
     overflow: auto;
-    padding: 8px;
+    padding: 10px;
   }
   .zery-layout-foot {
     background: #ffffff;
