@@ -1,6 +1,6 @@
 {
   "name": "vue-element-zery-layout",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "author": "Zery Chou",
   "description": "the zery-layout base on vue and element-ui that can build a backend fastly",

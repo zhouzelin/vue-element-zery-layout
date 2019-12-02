@@ -180,7 +180,7 @@ html, body {
 }
 </style>
 `````
-![zery-admin](https://github.com/zhouzelin/vue-element-zery-layout/public/assets/img/zery-admin.png")
+![zery-admin]("https://raw.githubusercontent.com/zhouzelin/vue-element-zery-layout/master/public/assets/img/zery-admin.png")
 
 ###github地址
 [https://github.com/zhouzelin/vue-element-zery-layout][1]
