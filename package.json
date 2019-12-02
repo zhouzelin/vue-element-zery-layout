@@ -1,16 +1,27 @@
 {
-  "name": "vue-element-backend-layout",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue-element-zery-layout",
+  "version": "0.1.1",
+  "private": false,
+  "author": "Zery Chou",
+  "description": "the zery-layout base on vue and element-ui that can build a backend fastly",
+  "main": "lib/zeryLayout.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name zeryLayout src/package/index.js"
   },
   "dependencies": {
     "core-js": "^3.4.3",
+    "element-ui": "^2.13.0",
     "vue": "^2.6.10"
   },
+  "files": [
+    "lib/fonts",
+    "lib/zery-layout.css",
+    "lib/zery-layout.umd.min.js",
+    "package.json"
+  ],
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-eslint": "^4.1.0",
@@ -18,6 +29,8 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {

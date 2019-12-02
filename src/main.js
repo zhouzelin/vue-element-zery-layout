@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
+import layout from './package/index'
+
+Vue.use(layout)
 
 Vue.config.productionTip = false
 
